@@ -1,0 +1,3 @@
+[runner]
+# Yêu cầu Streamlit Cloud sử dụng phiên bản Python 3.11
+pythonVersion = "3.11"
