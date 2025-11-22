@@ -86,7 +86,11 @@ if uploaded_file is not None:
     spinner_placeholder.empty()
         
     st.success('Phân tích hoàn tất!')
-
+    
+    # Tạo một bản sao có thể ghi của frame để đảm bảo tương thích với PyTorch
+    # Điều này khắc phục lỗi RuntimeError: "given numpy array is not writeable"
+    frame = frame.copy()
+    
     st.markdown("---")
     st.markdown("### Hình Ảnh Đã Tải Lên")
     col_img1, col_img2, col_img3 = st.columns([1, 2, 1])
