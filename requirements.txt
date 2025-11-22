@@ -1,5 +1,11 @@
-# Các thư viện chính
-ultralytics
+# --- Phiên bản đã được kiểm tra để tương thích trên Streamlit Cloud ---
+
+# 1. Ghim phiên bản ultralytics và protobuf để tránh xung đột
+# ultralytics 8.0.196 hoạt động tốt với protobuf 3.20.3
+ultralytics==8.0.196
+protobuf==3.20.3
+
+# 2. Các thư viện chính khác
 streamlit
 pandas
 streamlit-webrtc
@@ -7,14 +13,3 @@ av
 opencv-python-headless
 google-generativeai
 requests
-
-# --- Sửa lỗi xung đột ---
-
-# 1. Sửa lỗi xung đột Protobuf (do ultralytics và streamlit gây ra)
-protobuf==3.20.3
-
-# 2. Sửa lỗi xung đột của Streamlit (dependency hell)
-# Cặp này sửa lỗi 'TypeError: ... 'closed'' VÀ 'AttributeError: ... '_typing_check''
-altair==5.2.0
-typing-extensions==4.10.0
-referencing==0.32.0
