@@ -1,0 +1,255 @@
+
+/* Global styles */
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Main app background - clean white/light gray */
+.stApp {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Main content container */
+[data-testid="block-container"] {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    padding: 2rem 1rem;
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color: #ecf0f1;
+}
+
+/* Header styling */
+h1 {
+    color: #2c3e50;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Subheaders */
+h2 {
+    color: #34495e;
+    font-weight: 600;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+h3::before {
+    content: "";
+    margin-right: 0;
+}
+
+/* File uploader styling */
+[data-testid="stFileUploader"] {
+    background-color: #f8f9fa;
+    border: 2px dashed #3498db;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: #2980b9;
+    background-color: #e8f4f8;
+}
+
+[data-testid="stFileUploader"] label {
+    color: #2c3e50 !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Hide the filename display inside uploader */
+[data-testid="stFileUploader"] section[data-testid="stFileUploaderDropzone"] + div {
+    display: none !important;
+}
+
+[data-testid="stFileUploader"] small {
+    display: none !important;
+}
+
+/* Image container - smaller */
+[data-testid="stImage"] {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+/* Image caption styling */
+[data-testid="stImageCaption"] {
+    color: #2c3e50; /* Bạn có thể thay đổi mã màu này */
+    font-style: italic;
+    text-align: center;
+}
+
+/* Expander styling */
+.streamlit-expanderHeader {
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.streamlit-expanderHeader:hover {
+    background-color: #d5dbdb;
+}
+
+.streamlit-expanderContent {
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+    padding: 1.5rem;
+    border: 1px solid #ecf0f1;
+    border-top: none;
+}
+
+/* Info, success, and warning boxes */
+.stAlert {
+    border-radius: 10px;
+    border-left: 5px solid;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+}
+
+[data-testid="stNotification"] {
+    background-color: #e8f4f8;
+    border-left-color: #3498db;
+}
+
+.stSuccess {
+    background-color: #d5f4e6;
+    border-left-color: #27ae60;
+}
+
+/* Spinner */
+.stSpinner > div {
+    border-top-color: #2c3e50 !important;
+    border-right-color: rgba(44, 62, 80, 0.3) !important;
+    border-bottom-color: rgba(44, 62, 80, 0.3) !important;
+    border-left-color: rgba(44, 62, 80, 0.3) !important;
+}
+
+.stSpinner > div > div {
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+}
+
+/* Additional spinner targeting */
+div[data-testid="stSpinner"] > div {
+    border-color: rgba(44, 62, 80, 0.3) !important;
+    border-top-color: #2c3e50 !important;
+}
+
+.stSpinner svg circle {
+    stroke: #2c3e50 !important;
+}
+
+/* Markdown text */
+.stMarkdown {
+    color: #2c3e50;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.stMarkdown a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.stMarkdown a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Cards for results */
+.result-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+/* Badge styling */
+.badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0.3rem;
+}
+
+.custom-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+.custom-spinner-icon {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(44, 62, 80, 0.3);
+    border-top-color: #2c3e50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 12px;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
