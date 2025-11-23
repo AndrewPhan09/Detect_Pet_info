@@ -4,14 +4,12 @@ import requests
 from urllib.parse import quote
 import google.generativeai as genai
 
-# This function was moved from app.py
 def get_gemini_animal_info(object_name, gemini_model):
     """Lấy và tóm tắt thông tin về một đối tượng bằng Gemini API."""
     if not gemini_model:
         return "Lỗi: Gemini model chưa được khởi tạo. Vui lòng cung cấp API Key."
     try:
-        # Note: It might be better to pass the initialized model directly
-        # but for now, we'll keep the logic as it was.
+
         model = genai.GenerativeModel('gemini-2.5-flash')
         prompt = (
             f"Cung cấp thông tin về loài '{object_name}' bằng tiếng Việt theo định dạng sau:\n\n"
@@ -30,7 +28,6 @@ def get_gemini_animal_info(object_name, gemini_model):
     except Exception as e:
         return f"Lỗi khi truy xuất thông tin cho {object_name}: {e}"
 
-# This class was moved from app.py
 class EnhancedYOLODetector:
     def __init__(self, model_path='best.pt', gemini_model=None):
         try:

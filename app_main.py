@@ -83,9 +83,7 @@ if uploaded_file is not None:
             <span>Đang phân tích và tra cứu thông tin...</span>
         </div>
     """, unsafe_allow_html=True)
-    
-    # Tạo một bản sao có thể ghi của frame để đảm bảo tương thích với PyTorch
-    # Điều này khắc phục lỗi RuntimeError: "given numpy array is not writeable"
+
     frame_copy = frame.copy()
     results = detector.enhanced_detection(frame_copy)
     spinner_placeholder.empty()
@@ -95,7 +93,7 @@ if uploaded_file is not None:
     st.markdown("### Hình Ảnh Đã Tải Lên")
     col_img1, col_img2, col_img3 = st.columns([1, 2, 1])
     with col_img2:
-        st.image(frame_rgb, caption="Hình ảnh được gửi để phân tích", use_container_width=True)
+        st.image(frame_rgb, caption="Hình ảnh được gửi để phân tích", width='stretch')
     if results['object_info']:
         st.markdown("---")
         st.markdown("## Kết Quả Nghiên Cứu")
