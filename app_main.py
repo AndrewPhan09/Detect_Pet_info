@@ -3,10 +3,15 @@ import cv2
 import numpy as np
 import google.generativeai as genai
 
+# Thêm thư viện 'os' để xử lý đường dẫn file
+import os
+
 from detector import EnhancedYOLODetector
 
 def apply_ui_styles():
-    with open('styles.css') as f:
+    # Xây dựng đường dẫn tuyệt đối đến file styles.css
+    style_file_path = os.path.join(os.path.dirname(__file__), 'styles.css')
+    with open(style_file_path) as f:
         style = f.read()
     st.markdown(f'<style>{style}</style>', unsafe_allow_html=True)
 
