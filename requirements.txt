@@ -9,4 +9,3 @@ opencv-python-headless
 google-generativeai==0.4.1
 protobuf==3.20.3
 altair==5.2.0
-typing-extensions==4.10.0
