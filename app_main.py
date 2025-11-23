@@ -2,10 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import google.generativeai as genai
-
-# Thêm thư viện 'os' để xử lý đường dẫn file
 import os
-
 from detector import EnhancedYOLODetector
 
 def apply_ui_styles():
